@@ -17,6 +17,13 @@ class Monochromator:
         if input("Set monochromator to 400 nm (yes/no)? ") != "yes":
             raise Exception("Monochromator must be set to expected wavelength before use")
 
+
+        # testing
+        self.enable()
+        self.steponce(False)
+        self.steponce(True)
+        self.disable()
+
     def update_status(self):
         # reads byte from serial and uses byte to update status
         incoming = self.ser.read().decode('ascii')

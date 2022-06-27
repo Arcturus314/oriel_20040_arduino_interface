@@ -10,7 +10,7 @@ void setup() {
   pinMode(db15.revlim, INPUT);
   pinMode(db15.steppulse, OUTPUT);
   pinMode(db15.fwdrev, OUTPUT);
-
+  
   Serial.println("INIT DONE");
 }
 
@@ -30,7 +30,7 @@ void setup() {
   * 4: unrecognized
   */
 
-bool dir = true;
+bool dir = false;
 
 int step(bool setdir) {
   // if setdir = True, step FORWARD one
