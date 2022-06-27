@@ -18,12 +18,12 @@
  #define pinout_h
 
 struct db15_struct {
-    int halffull = 9;
-    int en = 10;
-    int fwdlim = 11;
-    int revlim = 12;
-    int steppulse = 13;
-    int fwdrev = 14;
+    int halffull = 9; // pin 9 on DB15
+    int en = 10;  // pin 10 on DB15
+    int fwdlim = 11; // pin 11 on DB15
+    int revlim = 12; // pin 12 on DB15
+    int steppulse = 13; // pin 13 on DB15
+    int fwdrev = 8; // pin 14 on DB15
 } db15;
 
 

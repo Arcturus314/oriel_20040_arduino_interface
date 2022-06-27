@@ -43,12 +43,12 @@ int step(bool setdir) {
   }
 
   digitalWrite(db15.steppulse, HIGH);
-  delay(100);
+  delay(25);
   digitalWrite(db15.steppulse, LOW);
-  delay(100);
+  delay(25);
 
-  if (digitalRead(db15.revlim)) return 2;
-  else if (digitalRead(db15.fwdlim)) return 3;
+  if (!digitalRead(db15.revlim)) return 2;
+  else if (!digitalRead(db15.fwdlim)) return 3;
   else return 1;
 
 
@@ -59,17 +59,17 @@ void loop() {
   if (Serial.available() > 0) {
     int incomingByte = Serial.read();
     switch (incomingByte) {
-      case 1:
-        return step(true);
+      case 0x31:
+        Serial.print(step(true));
         break;
-      case 2:
-        return step(false);
+      case 0x32:
+        Serial.print(step(false));
         break;
-      case 3:
+      case 0x33:
         digitalWrite(db15.en, HIGH);
         Serial.print(1);
         break;
-      case 4:
+      case 0x34:
         digitalWrite(db15.en, LOW);
         Serial.print(1);
         break;
