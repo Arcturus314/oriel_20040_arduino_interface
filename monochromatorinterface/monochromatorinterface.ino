@@ -47,9 +47,9 @@ int step(bool setdir) {
   digitalWrite(db15.steppulse, LOW);
   delay(25);
 
-  if (!digitalRead(db15.revlim)) return 2;
-  else if (!digitalRead(db15.fwdlim)) return 3;
-  else return 1;
+  //if (!digitalRead(db15.revlim)) return 2;
+  //else if (!digitalRead(db15.fwdlim)) return 3;
+  return 1;
 
 
 }
